@@ -1,0 +1,20 @@
+[project]
+name = "xrayctl"
+version = "1.0.0"
+readme = "README.md"
+description = "Console (CLI) proxy utility client — reimplements Happ's client-side logic (server/subscription/routing management + Xray-core config generation) as a terminal program, per HAPP_console_spec.txt."
+requires-python = ">=3.9"
+dependencies = ["prompt_toolkit>=3.0", "pystray>=0.19", "pillow>=10.0"]
+
+[project.optional-dependencies]
+qr = ["qrcode>=7.4"]
+
+[project.scripts]
+xrayctl = "xrayctl.__main__:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["xrayctl*"]
